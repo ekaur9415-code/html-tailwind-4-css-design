@@ -63,16 +63,77 @@
 
     <!-- Main Content -->
     <main class="min-h-[calc(100vh-4rem)] flex-1 p-4 md:p-6 lg:p-8">
-      
-      <!-- Dashboard Intro -->
-      <section class="mb-8">
-        <h1 class="text-3xl font-bold tracking-tight">RecruitFlow Design System Pages</h1>
-        <p class="mt-2 text-gray-600">A modern SaaS-style recruitment platform prototype built with semantic HTML and Tailwind CSS v4 utilities.</p>
-      </section>
-      <section class="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-        <a href="candidate-registration.html" class="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"><h2 class="font-semibold">Candidate Registration</h2><p class="mt-2 text-sm text-gray-500">Open page</p></a><a href="candidate-profile-setup.html" class="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"><h2 class="font-semibold">Profile Setup</h2><p class="mt-2 text-sm text-gray-500">Open page</p></a><a href="candidate-dashboard.html" class="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"><h2 class="font-semibold">Candidate Dashboard</h2><p class="mt-2 text-sm text-gray-500">Open page</p></a><a href="job-search.html" class="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"><h2 class="font-semibold">Job Search</h2><p class="mt-2 text-sm text-gray-500">Open page</p></a><a href="job-details.html" class="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"><h2 class="font-semibold">Job Details</h2><p class="mt-2 text-sm text-gray-500">Open page</p></a><a href="recruiter-signup.html" class="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"><h2 class="font-semibold">Recruiter Signup</h2><p class="mt-2 text-sm text-gray-500">Open page</p></a><a href="recruiter-dashboard-limited.html" class="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"><h2 class="font-semibold">Recruiter Dashboard (Limited)</h2><p class="mt-2 text-sm text-gray-500">Open page</p></a><a href="upgrade-access.html" class="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"><h2 class="font-semibold">Upgrade Access</h2><p class="mt-2 text-sm text-gray-500">Open page</p></a><a href="recruiter-dashboard-full.html" class="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"><h2 class="font-semibold">Recruiter Dashboard (Full)</h2><p class="mt-2 text-sm text-gray-500">Open page</p></a><a href="candidate-profile.html" class="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"><h2 class="font-semibold">Candidate Profile</h2><p class="mt-2 text-sm text-gray-500">Open page</p></a><a href="chat-interface.html" class="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"><h2 class="font-semibold">Chat Interface</h2><p class="mt-2 text-sm text-gray-500">Open page</p></a><a href="admin-dashboard.html" class="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"><h2 class="font-semibold">Admin Dashboard</h2><p class="mt-2 text-sm text-gray-500">Open page</p></a><a href="admin-messaging.html" class="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"><h2 class="font-semibold">Admin Messaging</h2><p class="mt-2 text-sm text-gray-500">Open page</p></a><a href="reporting-export.html" class="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"><h2 class="font-semibold">Reporting / Export</h2><p class="mt-2 text-sm text-gray-500">Open page</p></a>
+      <!-- NJP-inspired Landing Page -->
+      <section class="rounded-2xl border border-slate-200 bg-white shadow-sm">
+        <div class="border-b border-slate-200 bg-slate-900 px-6 py-3 text-xs font-semibold uppercase tracking-wide text-slate-200">National Jobs Portal · Recruitment Services</div>
+        <div class="grid gap-6 p-6 lg:grid-cols-3 lg:items-center">
+          <div class="lg:col-span-2">
+            <h1 class="text-3xl font-extrabold tracking-tight text-slate-900 md:text-4xl">Find verified government & private sector jobs</h1>
+            <p class="mt-3 max-w-2xl text-sm leading-6 text-slate-600">Search opportunities by country, city, sector and job title. RecruitFlow makes recruitment transparent and accessible for candidates and employers.</p>
+            <div class="mt-5 flex flex-wrap gap-3">
+              <a href="job-search.html" class="rounded-lg bg-slate-900 px-4 py-2.5 text-sm font-semibold text-white hover:bg-slate-800">Search Jobs</a>
+              <a href="candidate-registration.html" class="rounded-lg border border-slate-300 px-4 py-2.5 text-sm font-semibold text-slate-700 hover:bg-slate-50">Create Candidate Profile</a>
+              <a href="recruiter-signup.html" class="rounded-lg border border-slate-300 px-4 py-2.5 text-sm font-semibold text-slate-700 hover:bg-slate-50">Employer Registration</a>
+            </div>
+          </div>
+          <div class="rounded-xl border border-slate-200 bg-slate-50 p-4">
+            <p class="text-sm font-semibold text-slate-800">Portal Snapshot</p>
+            <dl class="mt-3 space-y-2 text-sm text-slate-600">
+              <div class="flex justify-between"><dt>Registered Candidates</dt><dd class="font-semibold text-slate-900">14,220</dd></div>
+              <div class="flex justify-between"><dt>Recruiters</dt><dd class="font-semibold text-slate-900">1,201</dd></div>
+              <div class="flex justify-between"><dt>Open Roles</dt><dd class="font-semibold text-slate-900">250+</dd></div>
+            </dl>
+          </div>
+        </div>
       </section>
 
+      <section class="mt-6 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+        <div class="mb-4 flex items-center justify-between gap-3">
+          <h2 class="text-lg font-bold text-slate-900">Job Search</h2>
+          <a href="job-search.html" class="text-sm font-semibold text-indigo-700 hover:text-indigo-800">Advanced Search →</a>
+        </div>
+        <div class="grid gap-3 md:grid-cols-2 xl:grid-cols-5">
+          <input class="rounded-lg border border-slate-300 px-3 py-2.5 text-sm" placeholder="Job title (e.g., Teacher)">
+          <select class="rounded-lg border border-slate-300 px-3 py-2.5 text-sm"><option>Country</option><option>Pakistan</option><option>KSA</option><option>UAE</option><option>UK</option></select>
+          <input class="rounded-lg border border-slate-300 px-3 py-2.5 text-sm" placeholder="City">
+          <select class="rounded-lg border border-slate-300 px-3 py-2.5 text-sm"><option>Sector</option><option>Education</option><option>IT</option><option>Healthcare</option><option>Engineering</option><option>Finance</option></select>
+          <a href="job-search.html" class="inline-flex items-center justify-center rounded-lg bg-indigo-600 px-4 py-2.5 text-sm font-semibold text-white hover:bg-indigo-700">Search</a>
+        </div>
+      </section>
+
+      <section class="mt-6 grid gap-6 xl:grid-cols-3">
+        <div class="xl:col-span-2 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+          <div class="mb-4 flex items-center justify-between">
+            <h2 class="text-lg font-bold text-slate-900">Latest Job Advertisements</h2>
+            <a href="job-search.html" class="text-sm font-semibold text-indigo-700">View all</a>
+          </div>
+          <div class="divide-y divide-slate-100 rounded-xl border border-slate-200">
+            <a href="job-details.html?id=1" class="flex items-start justify-between gap-4 px-4 py-3 transition hover:bg-slate-50"><div><p class="font-semibold text-slate-900">Senior Product Designer</p><p class="mt-1 text-xs text-slate-500">Orbit Labs · USA, San Francisco · Design</p></div><span class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600">Ref-1001</span></a>
+            <a href="job-details.html?id=2" class="flex items-start justify-between gap-4 px-4 py-3 transition hover:bg-slate-50"><div><p class="font-semibold text-slate-900">UX Researcher</p><p class="mt-1 text-xs text-slate-500">Nova · USA, New York · Research</p></div><span class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600">Ref-1002</span></a>
+            <a href="job-details.html?id=3" class="flex items-start justify-between gap-4 px-4 py-3 transition hover:bg-slate-50"><div><p class="font-semibold text-slate-900">Frontend Engineer</p><p class="mt-1 text-xs text-slate-500">Arc Systems · Canada, Toronto · IT</p></div><span class="rounded-md bg-slate-100 px-2 py-1 text-xs font-semibold text-slate-600">Ref-1003</span></a>
+          </div>
+        </div>
+        <aside class="space-y-6">
+          <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+            <h3 class="text-base font-bold text-slate-900">Important Notices</h3>
+            <ul class="mt-3 space-y-2 text-sm text-slate-600">
+              <li>• Keep your profile updated for better matching.</li>
+              <li>• Upload latest CV in PDF format.</li>
+              <li>• Verify recruiter details before communication.</li>
+              <li>• Use portal messaging for secure contact.</li>
+            </ul>
+          </div>
+          <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+            <h3 class="text-base font-bold text-slate-900">Quick Links</h3>
+            <div class="mt-3 grid gap-2 text-sm">
+              <a href="candidate-registration.html" class="rounded-lg border border-slate-200 px-3 py-2 hover:bg-slate-50">Candidate Registration</a>
+              <a href="recruiter-signup.html" class="rounded-lg border border-slate-200 px-3 py-2 hover:bg-slate-50">Recruiter Registration</a>
+              <a href="recruiter-contract.html" class="rounded-lg border border-slate-200 px-3 py-2 hover:bg-slate-50">Recruiter Contract Form</a>
+              <a href="reporting-export.html" class="rounded-lg border border-slate-200 px-3 py-2 hover:bg-slate-50">Reports & Exports</a>
+            </div>
+          </div>
+        </aside>
+      </section>
     </main>
   </div>
   <script src="./data.js"></script>
