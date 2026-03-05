@@ -47,52 +47,94 @@ function renderIndex(main) {
     ['recruiter-signup.html', 'Recruiter Signup'], ['recruiter-dashboard-limited.html', 'Recruiter Dashboard (Limited)'],
     ['upgrade-access.html', 'Upgrade Access'], ['recruiter-dashboard-full.html', 'Recruiter Dashboard (Full)'],
     ['candidate-profile.html', 'Candidate Profile'], ['chat-interface.html', 'Chat Interface'], ['admin-dashboard.html', 'Admin Dashboard'],
-    ['admin-messaging.html', 'Admin Messaging'], ['reporting-export.html', 'Reporting / Export'],
-    ['recruiter-contract.html', 'Recruiter Contract Form'],
+    ['admin-messaging.html', 'Admin Messaging'], ['reporting-export.html', 'Reporting / Export'], ['recruiter-contract.html', 'Recruiter Contract Form'],
   ];
+
+  const logos = ['ORBIT', 'NOVA', 'PULSE', 'TALENTX', 'PLANE'];
+
   main.innerHTML = `
-    <section class="mb-8 overflow-hidden rounded-3xl bg-gradient-to-r from-indigo-600 via-violet-600 to-sky-600 p-8 text-white shadow-lg">
-      <p class="text-sm font-medium text-indigo-100">Modern Recruitment Platform</p>
-      <h1 class="mt-2 text-3xl font-bold tracking-tight md:text-4xl">Welcome to RecruitFlow</h1>
-      <p class="mt-3 max-w-2xl text-sm text-indigo-100 md:text-base">Discover opportunities, connect with top talent, and manage hiring in one polished SaaS workflow.</p>
-      <div class="mt-6 grid gap-3 sm:grid-cols-2 lg:max-w-2xl">
-        <a href="job-search.html" class="rounded-xl bg-white px-4 py-3 text-center text-sm font-semibold text-indigo-700 transition hover:bg-indigo-50">Find a Job</a>
-        <a href="candidate-registration.html" class="rounded-xl border border-indigo-200 bg-white/10 px-4 py-3 text-center text-sm font-semibold text-white transition hover:bg-white/20">Create Candidate Account</a>
-      </div>
-    </section>
-
-    <section class="mb-8 grid gap-4 lg:grid-cols-2">
-      <div class="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
-        <h2 class="text-lg font-semibold">Post a Job</h2>
-        <p class="mt-1 text-sm text-gray-600">Choose your path based on your access status.</p>
-        <div class="mt-4 overflow-hidden rounded-xl border border-gray-200">
-          <div class="grid grid-cols-3 bg-gray-50 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-gray-500">
-            <span>Action</span><span>Registered</span><span>Unregistered</span>
+    <!-- Hero -->
+    <section class="relative overflow-hidden rounded-3xl border border-indigo-100 bg-gradient-to-br from-indigo-600 via-violet-600 to-sky-600 p-8 text-white shadow-xl md:p-12">
+      <div class="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-white/10 blur-2xl"></div>
+      <div class="pointer-events-none absolute -bottom-16 -left-10 h-56 w-56 rounded-full bg-cyan-300/20 blur-2xl"></div>
+      <div class="relative grid gap-8 lg:grid-cols-2 lg:items-center">
+        <div>
+          <p class="inline-flex rounded-full border border-white/25 bg-white/10 px-3 py-1 text-xs font-semibold tracking-wide text-indigo-100">Trusted by fast-growing teams</p>
+          <h1 class="mt-4 text-4xl font-extrabold tracking-tight md:text-5xl">Hire better talent, faster.</h1>
+          <p class="mt-4 max-w-xl text-sm leading-6 text-indigo-100 md:text-base">RecruitFlow helps candidates and recruiters connect through intelligent matching, structured profiles, and streamlined collaboration workflows.</p>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a href="job-search.html" class="rounded-xl bg-white px-5 py-3 text-sm font-semibold text-indigo-700 transition hover:bg-indigo-50">Find a Job</a>
+            <a href="recruiter-signup.html" class="rounded-xl border border-white/30 bg-white/10 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/20">Post a Job</a>
           </div>
-          <div class="grid grid-cols-3 items-center gap-3 border-t border-gray-100 px-4 py-3 text-sm">
-            <span class="font-medium text-gray-700">Post a Job</span>
-            <a href="recruiter-dashboard-full.html" class="rounded-lg bg-indigo-600 px-3 py-2 text-center font-semibold text-white hover:bg-indigo-700">Go to Job Post</a>
-            <a href="recruiter-signup.html" class="rounded-lg border border-gray-300 px-3 py-2 text-center font-semibold text-gray-700 hover:bg-gray-50">Recruiter Sign Up</a>
-          </div>
-          <div class="grid grid-cols-3 items-center gap-3 border-t border-gray-100 px-4 py-3 text-sm">
-            <span class="font-medium text-gray-700">Find a Job</span>
-            <a href="job-search.html" class="rounded-lg border border-gray-300 px-3 py-2 text-center font-semibold text-gray-700 hover:bg-gray-50">Job Search</a>
-            <a href="job-search.html" class="rounded-lg border border-gray-300 px-3 py-2 text-center font-semibold text-gray-700 hover:bg-gray-50">Job Search</a>
+          <div class="mt-6 flex flex-wrap items-center gap-4 text-xs text-indigo-100">
+            <span>✔ 14k+ candidates</span><span>✔ 1.2k recruiters</span><span>✔ Global coverage</span>
           </div>
         </div>
-      </div>
-
-      <div class="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
-        <h2 class="text-lg font-semibold">Latest Jobs</h2>
-        <div class="mt-4 space-y-3">
-          ${appData.jobs.slice(0, 4).map(j => `<a href="job-details.html?id=${j.id}" class="block rounded-xl border border-gray-200 p-4 transition hover:bg-gray-50"><p class="font-medium">${j.title} · ${j.company}</p><p class="mt-1 text-sm text-gray-500">${j.location} · ${j.level} · ${formatMoney(j.salary)}</p></a>`).join('')}
+        <div class="rounded-2xl border border-white/20 bg-white/10 p-5 backdrop-blur">
+          <p class="text-sm font-semibold">Latest Jobs</p>
+          <div class="mt-4 space-y-3">
+            ${appData.jobs.slice(0, 4).map(j => `<a href="job-details.html?id=${j.id}" class="block rounded-xl border border-white/20 bg-white/10 p-4 transition hover:bg-white/20"><p class="font-medium">${j.title}</p><p class="mt-1 text-xs text-indigo-100">${j.company} · ${j.country}, ${j.city} · ${formatMoney(j.salary)}</p></a>`).join('')}
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">${links.map(([href, label]) => `<a href="${href}" class="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"><h2 class="font-semibold">${label}</h2><p class="mt-2 text-sm text-gray-500">Open page</p></a>`).join('')}</section>
+    <!-- Social proof -->
+    <section class="mt-6 rounded-2xl border border-gray-200 bg-white p-5 shadow-sm">
+      <p class="text-xs font-semibold uppercase tracking-wide text-gray-500">Used by high-growth teams</p>
+      <div class="mt-4 grid grid-cols-2 gap-3 text-center text-sm font-semibold text-gray-500 sm:grid-cols-3 lg:grid-cols-5">
+        ${logos.map(l => `<span class="rounded-xl border border-gray-200 bg-gray-50 px-3 py-2">${l}</span>`).join('')}
+      </div>
+    </section>
+
+    <!-- Feature cards -->
+    <section class="mt-6 grid gap-4 md:grid-cols-3">
+      <article class="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+        <h2 class="text-lg font-semibold">Structured Candidate Profiles</h2>
+        <p class="mt-2 text-sm text-gray-600">Collect rich candidate data with drop-down-driven fields for faster screening and precise recruiter filtering.</p>
+      </article>
+      <article class="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+        <h2 class="text-lg font-semibold">Smart Job Discovery</h2>
+        <p class="mt-2 text-sm text-gray-600">Search by country, city, industry, and title with instant card-based results and smooth pagination.</p>
+      </article>
+      <article class="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+        <h2 class="text-lg font-semibold">Recruiter Workflows</h2>
+        <p class="mt-2 text-sm text-gray-600">From sign-up to contract approvals and candidate messaging, every step is streamlined in one place.</p>
+      </article>
+    </section>
+
+    <!-- User path matrix -->
+    <section class="mt-6 rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+      <h2 class="text-lg font-semibold">Get Started</h2>
+      <p class="mt-1 text-sm text-gray-600">Choose your path based on your account status.</p>
+      <div class="mt-4 overflow-hidden rounded-xl border border-gray-200">
+        <div class="grid grid-cols-3 bg-gray-50 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-gray-500">
+          <span>Action</span><span>Registered</span><span>Unregistered</span>
+        </div>
+        <div class="grid grid-cols-3 items-center gap-3 border-t border-gray-100 px-4 py-3 text-sm">
+          <span class="font-medium text-gray-700">Post a Job</span>
+          <a href="recruiter-dashboard-full.html" class="rounded-lg bg-indigo-600 px-3 py-2 text-center font-semibold text-white hover:bg-indigo-700">Open Recruiter Tools</a>
+          <a href="recruiter-signup.html" class="rounded-lg border border-gray-300 px-3 py-2 text-center font-semibold text-gray-700 hover:bg-gray-50">Create Recruiter Account</a>
+        </div>
+        <div class="grid grid-cols-3 items-center gap-3 border-t border-gray-100 px-4 py-3 text-sm">
+          <span class="font-medium text-gray-700">Find a Job</span>
+          <a href="job-search.html" class="rounded-lg border border-gray-300 px-3 py-2 text-center font-semibold text-gray-700 hover:bg-gray-50">Search Jobs</a>
+          <a href="job-search.html" class="rounded-lg border border-gray-300 px-3 py-2 text-center font-semibold text-gray-700 hover:bg-gray-50">Search Jobs</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Product pages -->
+    <section class="mt-6">
+      <div class="mb-3 flex items-center justify-between">
+        <h2 class="text-lg font-semibold">Explore Product Pages</h2>
+        <span class="text-xs text-gray-500">Prototype Navigation</span>
+      </div>
+      <div class="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">${links.map(([href, label]) => `<a href="${href}" class="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"><h3 class="font-semibold">${label}</h3><p class="mt-2 text-sm text-gray-500">Open page</p></a>`).join('')}</div>
+    </section>
   `;
 }
+
 
 function renderCandidateDashboard(main) {
   main.innerHTML = `<section class="mb-6 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">${card('Applications', appData.stats.applications)}${card('Interviews', appData.stats.interviews)}${card('Saved Jobs', appData.stats.savedJobs)}${card('Profile Views', appData.stats.profileViews)}</section><section class="grid gap-6 xl:grid-cols-3"><div class="xl:col-span-2 rounded-2xl border border-gray-200 bg-white p-6 shadow-sm"><h2 class="text-lg font-semibold">Recommended Jobs</h2><div class="mt-4 space-y-3">${appData.jobs.slice(0, 3).map(j => `<a href="job-details.html?id=${j.id}" class="block rounded-xl border border-gray-200 p-4 hover:bg-gray-50"><p class="font-medium">${j.title} · ${j.company}</p><p class="text-sm text-gray-500">${j.location} · ${formatMoney(j.salary)}</p></a>`).join('')}</div></div><div class="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm"><h2 class="text-lg font-semibold">Recent Activity</h2><ul class="mt-4 space-y-3 text-sm text-gray-600">${appData.activity.map(a => `<li>${a}</li>`).join('')}</ul></div></section>`;
