@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Recruiter Sign-up</title>
+  <title>Recruiter Contract Form</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -46,7 +46,7 @@
         <a href="candidate-dashboard.html" class="flex items-center justify-between rounded-xl px-3 py-2.5 text-gray-600 hover:bg-gray-100"><span>Candidate Dashboard</span><span class="text-xs text-gray-400">›</span></a>
         <a href="job-search.html" class="flex items-center justify-between rounded-xl px-3 py-2.5 text-gray-600 hover:bg-gray-100"><span>Job Search</span><span class="text-xs text-gray-400">›</span></a>
         <a href="job-details.html" class="flex items-center justify-between rounded-xl px-3 py-2.5 text-gray-600 hover:bg-gray-100"><span>Job Details</span><span class="text-xs text-gray-400">›</span></a>
-        <a href="recruiter-signup.html" class="flex items-center justify-between rounded-xl px-3 py-2.5 bg-indigo-50 text-indigo-700 border border-indigo-100"><span>Recruiter Signup</span><span class="text-xs text-gray-400">›</span></a>
+        <a href="recruiter-signup.html" class="flex items-center justify-between rounded-xl px-3 py-2.5 text-gray-600 hover:bg-gray-100"><span>Recruiter Signup</span><span class="text-xs text-gray-400">›</span></a>
         <a href="recruiter-dashboard-limited.html" class="flex items-center justify-between rounded-xl px-3 py-2.5 text-gray-600 hover:bg-gray-100"><span>Recruiter Dashboard (Limited)</span><span class="text-xs text-gray-400">›</span></a>
         <a href="upgrade-access.html" class="flex items-center justify-between rounded-xl px-3 py-2.5 text-gray-600 hover:bg-gray-100"><span>Upgrade Access</span><span class="text-xs text-gray-400">›</span></a>
         <a href="recruiter-dashboard-full.html" class="flex items-center justify-between rounded-xl px-3 py-2.5 text-gray-600 hover:bg-gray-100"><span>Recruiter Dashboard (Full)</span><span class="text-xs text-gray-400">›</span></a>
@@ -54,6 +54,7 @@
         <a href="chat-interface.html" class="flex items-center justify-between rounded-xl px-3 py-2.5 text-gray-600 hover:bg-gray-100"><span>Chat Interface</span><span class="text-xs text-gray-400">›</span></a>
         <a href="admin-dashboard.html" class="flex items-center justify-between rounded-xl px-3 py-2.5 text-gray-600 hover:bg-gray-100"><span>Admin Dashboard</span><span class="text-xs text-gray-400">›</span></a>
         <a href="admin-messaging.html" class="flex items-center justify-between rounded-xl px-3 py-2.5 text-gray-600 hover:bg-gray-100"><span>Admin Messaging</span><span class="text-xs text-gray-400">›</span></a>
+        <a href="recruiter-contract.html" class="flex items-center justify-between rounded-xl px-3 py-2.5 bg-indigo-50 text-indigo-700 border border-indigo-100"><span>Recruiter Contract</span><span class="text-xs text-gray-400">›</span></a>
         <a href="reporting-export.html" class="flex items-center justify-between rounded-xl px-3 py-2.5 text-gray-600 hover:bg-gray-100"><span>Reporting / Export</span><span class="text-xs text-gray-400">›</span></a>
       </nav>
     </aside>
@@ -63,25 +64,29 @@
 
     <!-- Main Content -->
     <main class="min-h-[calc(100vh-4rem)] flex-1 p-4 md:p-6 lg:p-8">
-      <section class="mx-auto max-w-4xl rounded-2xl border border-gray-200 bg-white p-6 shadow-sm md:p-8">
-        <h1 class="text-2xl font-bold">Recruiter Account Creation</h1>
-        <p class="mt-2 text-sm text-gray-600">Provide enough details to communicate with the recruitment company, including a second contact person.</p>
-        <form class="mt-6 grid gap-4 md:grid-cols-2">
+      <section class="mx-auto max-w-4xl space-y-6 rounded-2xl border border-gray-200 bg-white p-6 shadow-sm md:p-8">
+        <div>
+          <h1 class="text-2xl font-bold">Recruiter Contract Agreement</h1>
+          <p class="mt-2 text-sm text-gray-600">Read and complete this contract. Sign using your initials, then submit to Admin for approval. If you are not ready to agree, request a callback for follow-up.</p>
+        </div>
+        <div class="rounded-xl border border-gray-200 bg-gray-50 p-4 text-sm text-gray-700">
+          <p class="font-semibold">Agreement Summary</p>
+          <ul class="mt-2 list-disc space-y-1 pl-5">
+            <li>Recruiter must provide accurate role details and salary ranges.</li>
+            <li>Candidate contact data is confidential and restricted to hiring use.</li>
+            <li>Platform fees and service terms apply to all successful hires.</li>
+          </ul>
+        </div>
+        <form class="grid gap-4 md:grid-cols-2">
           <div><label class="mb-2 block text-sm font-medium">Company Name</label><input class="w-full rounded-xl border border-gray-300 px-4 py-2.5" placeholder="TalentMint"></div>
-          <div><label class="mb-2 block text-sm font-medium">Sector</label><select class="w-full rounded-xl border border-gray-300 px-4 py-2.5"><option>Education</option><option>IT</option><option>Communication</option><option>Corporate</option><option>Logistics</option></select></div>
-          <div><label class="mb-2 block text-sm font-medium">Country</label><select class="w-full rounded-xl border border-gray-300 px-4 py-2.5"><option>UK</option><option>USA</option><option>Canada</option><option>Australia</option><option>KSA</option><option>South Africa</option></select></div>
-          <div><label class="mb-2 block text-sm font-medium">City</label><input class="w-full rounded-xl border border-gray-300 px-4 py-2.5" placeholder="London"></div>
-          <div class="md:col-span-2 mt-2 rounded-xl border border-gray-200 bg-gray-50 p-4"><h2 class="font-semibold">Primary Contact Person</h2></div>
-          <div><label class="mb-2 block text-sm font-medium">Name</label><input class="w-full rounded-xl border border-gray-300 px-4 py-2.5" placeholder="Jordan Lee"></div>
-          <div><label class="mb-2 block text-sm font-medium">Phone Number</label><input class="w-full rounded-xl border border-gray-300 px-4 py-2.5" placeholder="+44 7700 900123"></div>
-          <div><label class="mb-2 block text-sm font-medium">Email</label><input type="email" class="w-full rounded-xl border border-gray-300 px-4 py-2.5" placeholder="jordan@talentmint.com"></div>
-          <div class="md:col-span-2 mt-2 rounded-xl border border-gray-200 bg-gray-50 p-4"><h2 class="font-semibold">Secondary Contact Person</h2></div>
-          <div><label class="mb-2 block text-sm font-medium">Second Contact Name</label><input class="w-full rounded-xl border border-gray-300 px-4 py-2.5" placeholder="Avery Smith"></div>
-          <div><label class="mb-2 block text-sm font-medium">Second Contact Phone</label><input class="w-full rounded-xl border border-gray-300 px-4 py-2.5" placeholder="+44 7700 900456"></div>
-          <div><label class="mb-2 block text-sm font-medium">Second Contact Email</label><input type="email" class="w-full rounded-xl border border-gray-300 px-4 py-2.5" placeholder="avery@talentmint.com"></div>
+          <div><label class="mb-2 block text-sm font-medium">Authorized Signatory</label><input class="w-full rounded-xl border border-gray-300 px-4 py-2.5" placeholder="Jordan Lee"></div>
+          <div><label class="mb-2 block text-sm font-medium">Signatory Email</label><input type="email" class="w-full rounded-xl border border-gray-300 px-4 py-2.5" placeholder="jordan@talentmint.com"></div>
+          <div><label class="mb-2 block text-sm font-medium">Initials (Signature)</label><input maxlength="4" class="w-full rounded-xl border border-gray-300 px-4 py-2.5 uppercase" placeholder="JL"></div>
+          <div class="md:col-span-2"><label class="mb-2 block text-sm font-medium">Comments / Clarifications</label><textarea class="h-24 w-full rounded-xl border border-gray-300 px-4 py-2.5" placeholder="Any terms you'd like clarified before approval..."></textarea></div>
+          <label class="md:col-span-2 flex items-start gap-3 rounded-xl border border-gray-200 p-3 text-sm"><input type="checkbox" class="mt-1 h-4 w-4"><span>I confirm I have read and understood the contract agreement terms.</span></label>
           <div class="md:col-span-2 flex flex-wrap gap-3">
-            <button class="rounded-xl bg-indigo-600 px-4 py-3 font-semibold text-white hover:bg-indigo-700">Create Recruiter Account</button>
-            <a href="recruiter-contract.html" class="rounded-xl border border-gray-300 px-4 py-3 text-sm font-semibold text-gray-700 hover:bg-gray-50">Continue to Contract Form</a>
+            <button class="rounded-xl bg-indigo-600 px-4 py-3 font-semibold text-white hover:bg-indigo-700">Submit to Admin for Approval</button>
+            <button class="rounded-xl border border-amber-300 bg-amber-50 px-4 py-3 font-semibold text-amber-800 hover:bg-amber-100">Request Callback</button>
           </div>
         </form>
       </section>

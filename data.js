@@ -10,11 +10,11 @@ const appData = {
     activeChats: 87,
   },
   jobs: [
-    { id: 1, title: 'Senior Product Designer', company: 'Orbit Labs', location: 'Remote', level: 'Senior', salary: 160000, description: 'Lead product design initiatives across candidate and recruiter workflows.' },
-    { id: 2, title: 'UX Researcher', company: 'Nova', location: 'New York', level: 'Senior', salary: 140000, description: 'Drive quantitative and qualitative research to improve funnel performance.' },
-    { id: 3, title: 'Frontend Engineer', company: 'Arc Systems', location: 'Remote', level: 'Mid-Senior', salary: 120000, description: 'Build performant interfaces for recruitment workflows.' },
-    { id: 4, title: 'Recruitment Operations Manager', company: 'TalentX', location: 'London', level: 'Senior', salary: 95000, description: 'Scale recruiter operations with data-driven decision making.' },
-    { id: 5, title: 'Lead Product Designer', company: 'Plane', location: 'Berlin', level: 'Lead', salary: 170000, description: 'Own end-to-end user experience for enterprise hiring teams.' },
+    { id: 1, title: 'Senior Product Designer', company: 'Orbit Labs', location: 'Remote', country: 'USA', city: 'San Francisco', industry: 'Design', level: 'Senior', salary: 160000, description: 'Lead product design initiatives across candidate and recruiter workflows.' },
+    { id: 2, title: 'UX Researcher', company: 'Nova', location: 'New York', country: 'USA', city: 'New York', industry: 'Research', level: 'Senior', salary: 140000, description: 'Drive quantitative and qualitative research to improve funnel performance.' },
+    { id: 3, title: 'Frontend Engineer', company: 'Arc Systems', location: 'Remote', country: 'Canada', city: 'Toronto', industry: 'IT', level: 'Mid-Senior', salary: 120000, description: 'Build performant interfaces for recruitment workflows.' },
+    { id: 4, title: 'Recruitment Operations Manager', company: 'TalentX', location: 'London', country: 'UK', city: 'London', industry: 'Corporate', level: 'Senior', salary: 95000, description: 'Scale recruiter operations with data-driven decision making.' },
+    { id: 5, title: 'Lead Product Designer', company: 'Plane', location: 'Berlin', country: 'Germany', city: 'Berlin', industry: 'Design', level: 'Lead', salary: 170000, description: 'Own end-to-end user experience for enterprise hiring teams.' },
   ],
   candidates: [
     { id: 1, name: 'Morgan Chen', role: 'Senior UX Designer', location: 'Remote', years: 8, qualification: 'M.Des', age: 31, gender: 'Female', skills: ['Figma', 'Design Systems', 'Prototyping'] },
@@ -48,8 +48,50 @@ function renderIndex(main) {
     ['upgrade-access.html', 'Upgrade Access'], ['recruiter-dashboard-full.html', 'Recruiter Dashboard (Full)'],
     ['candidate-profile.html', 'Candidate Profile'], ['chat-interface.html', 'Chat Interface'], ['admin-dashboard.html', 'Admin Dashboard'],
     ['admin-messaging.html', 'Admin Messaging'], ['reporting-export.html', 'Reporting / Export'],
+    ['recruiter-contract.html', 'Recruiter Contract Form'],
   ];
-  main.innerHTML = `<section class="mb-8"><h1 class="text-3xl font-bold tracking-tight">RecruitFlow Design System Pages</h1><p class="mt-2 text-gray-600">Dynamic prototypes powered by <code>data.js</code>.</p></section><section class="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">${links.map(([href, label]) => `<a href="${href}" class="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"><h2 class="font-semibold">${label}</h2><p class="mt-2 text-sm text-gray-500">Open page</p></a>`).join('')}</section>`;
+  main.innerHTML = `
+    <section class="mb-8 overflow-hidden rounded-3xl bg-gradient-to-r from-indigo-600 via-violet-600 to-sky-600 p-8 text-white shadow-lg">
+      <p class="text-sm font-medium text-indigo-100">Modern Recruitment Platform</p>
+      <h1 class="mt-2 text-3xl font-bold tracking-tight md:text-4xl">Welcome to RecruitFlow</h1>
+      <p class="mt-3 max-w-2xl text-sm text-indigo-100 md:text-base">Discover opportunities, connect with top talent, and manage hiring in one polished SaaS workflow.</p>
+      <div class="mt-6 grid gap-3 sm:grid-cols-2 lg:max-w-2xl">
+        <a href="job-search.html" class="rounded-xl bg-white px-4 py-3 text-center text-sm font-semibold text-indigo-700 transition hover:bg-indigo-50">Find a Job</a>
+        <a href="candidate-registration.html" class="rounded-xl border border-indigo-200 bg-white/10 px-4 py-3 text-center text-sm font-semibold text-white transition hover:bg-white/20">Create Candidate Account</a>
+      </div>
+    </section>
+
+    <section class="mb-8 grid gap-4 lg:grid-cols-2">
+      <div class="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+        <h2 class="text-lg font-semibold">Post a Job</h2>
+        <p class="mt-1 text-sm text-gray-600">Choose your path based on your access status.</p>
+        <div class="mt-4 overflow-hidden rounded-xl border border-gray-200">
+          <div class="grid grid-cols-3 bg-gray-50 px-4 py-2 text-xs font-semibold uppercase tracking-wide text-gray-500">
+            <span>Action</span><span>Registered</span><span>Unregistered</span>
+          </div>
+          <div class="grid grid-cols-3 items-center gap-3 border-t border-gray-100 px-4 py-3 text-sm">
+            <span class="font-medium text-gray-700">Post a Job</span>
+            <a href="recruiter-dashboard-full.html" class="rounded-lg bg-indigo-600 px-3 py-2 text-center font-semibold text-white hover:bg-indigo-700">Go to Job Post</a>
+            <a href="recruiter-signup.html" class="rounded-lg border border-gray-300 px-3 py-2 text-center font-semibold text-gray-700 hover:bg-gray-50">Recruiter Sign Up</a>
+          </div>
+          <div class="grid grid-cols-3 items-center gap-3 border-t border-gray-100 px-4 py-3 text-sm">
+            <span class="font-medium text-gray-700">Find a Job</span>
+            <a href="job-search.html" class="rounded-lg border border-gray-300 px-3 py-2 text-center font-semibold text-gray-700 hover:bg-gray-50">Job Search</a>
+            <a href="job-search.html" class="rounded-lg border border-gray-300 px-3 py-2 text-center font-semibold text-gray-700 hover:bg-gray-50">Job Search</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+        <h2 class="text-lg font-semibold">Latest Jobs</h2>
+        <div class="mt-4 space-y-3">
+          ${appData.jobs.slice(0, 4).map(j => `<a href="job-details.html?id=${j.id}" class="block rounded-xl border border-gray-200 p-4 transition hover:bg-gray-50"><p class="font-medium">${j.title} · ${j.company}</p><p class="mt-1 text-sm text-gray-500">${j.location} · ${j.level} · ${formatMoney(j.salary)}</p></a>`).join('')}
+        </div>
+      </div>
+    </section>
+
+    <section class="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">${links.map(([href, label]) => `<a href="${href}" class="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"><h2 class="font-semibold">${label}</h2><p class="mt-2 text-sm text-gray-500">Open page</p></a>`).join('')}</section>
+  `;
 }
 
 function renderCandidateDashboard(main) {
@@ -59,20 +101,29 @@ function renderCandidateDashboard(main) {
 function renderJobSearch(main) {
   let currentPage = 1;
   let filtered = [...appData.jobs];
-  const perPage = 2;
+  const perPage = 3;
   const draw = () => {
-    const total = Math.ceil(filtered.length / perPage);
+    const total = Math.max(1, Math.ceil(filtered.length / perPage));
     const jobs = filtered.slice((currentPage - 1) * perPage, currentPage * perPage);
-    byId('job-list').innerHTML = jobs.map(j => `<a href="job-details.html?id=${j.id}" class="block rounded-2xl border border-gray-200 bg-white p-5 shadow-sm"><p class="font-semibold">${j.title} · ${j.company}</p><p class="text-sm text-gray-500">${j.location} · ${j.level} · ${formatMoney(j.salary)}</p></a>`).join('');
-    byId('pages').innerHTML = `<button class="rounded-lg border border-gray-300 px-3 py-1.5 text-sm" ${currentPage===1?'disabled':''} id="prev">Prev</button><span class="rounded-lg bg-indigo-600 px-3 py-1.5 text-sm text-white">${currentPage}</span><button class="rounded-lg border border-gray-300 px-3 py-1.5 text-sm" ${currentPage>=total?'disabled':''} id="next">Next</button>`;
+    byId('job-list').innerHTML = jobs.length ? jobs.map(j => `<a href="job-details.html?id=${j.id}" class="block rounded-2xl border border-gray-200 bg-white p-5 shadow-sm hover:bg-gray-50"><p class="font-semibold">${j.title} · ${j.company}</p><p class="text-sm text-gray-500">${j.country}, ${j.city} · ${j.industry} · ${j.level} · ${formatMoney(j.salary)}</p></a>`).join('') : '<div class="rounded-2xl border border-dashed border-gray-300 bg-white p-8 text-center text-sm text-gray-500">No jobs found. Try broadening your search fields.</div>';
+    byId('pages').innerHTML = `<button class="rounded-lg border border-gray-300 px-3 py-1.5 text-sm disabled:opacity-50" ${currentPage===1?'disabled':''} id="prev">Prev</button><span class="rounded-lg bg-indigo-600 px-3 py-1.5 text-sm text-white">${currentPage}/${total}</span><button class="rounded-lg border border-gray-300 px-3 py-1.5 text-sm disabled:opacity-50" ${currentPage>=total?'disabled':''} id="next">Next</button>`;
     byId('prev')?.addEventListener('click',()=>{currentPage--;draw();});
     byId('next')?.addEventListener('click',()=>{currentPage++;draw();});
   };
-  main.innerHTML = `<section class="grid gap-6 xl:grid-cols-4"><aside class="space-y-4 rounded-2xl border border-gray-200 bg-white p-5 shadow-sm xl:col-span-1"><h2 class="font-semibold">Filters</h2><input id="f-role" class="w-full rounded-xl border border-gray-300 px-3 py-2" placeholder="Role"><input id="f-location" class="w-full rounded-xl border border-gray-300 px-3 py-2" placeholder="Location"><button id="apply-filters" class="w-full rounded-xl bg-indigo-600 px-3 py-2 text-sm font-semibold text-white">Apply Filters</button></aside><div class="space-y-4 xl:col-span-3"><div id="job-list" class="space-y-4"></div><div id="pages" class="flex items-center gap-2"></div></div></section>`;
+
+  const countries = [...new Set(appData.jobs.map(j => j.country))];
+  main.innerHTML = `<section class="mb-4 rounded-2xl border border-gray-200 bg-white p-4 text-sm text-gray-600">Search for jobs using various search category options.</section><section class="grid gap-6 xl:grid-cols-4"><aside class="space-y-4 rounded-2xl border border-gray-200 bg-white p-5 shadow-sm xl:col-span-1"><h2 class="font-semibold">Search Fields</h2><div class="rounded-xl border border-gray-200 text-xs"><div class="grid grid-cols-3 bg-gray-50 px-3 py-2 font-semibold uppercase tracking-wide text-gray-500"><span>Field</span><span>Option 1</span><span>Option 2</span></div><div class="grid grid-cols-3 border-t border-gray-100 px-3 py-2 text-gray-600"><span>Location</span><span>Country</span><span>City</span></div><div class="grid grid-cols-3 border-t border-gray-100 px-3 py-2 text-gray-600"><span>Job</span><span>Industry</span><span>Title</span></div></div><label class="block text-sm font-medium text-gray-700">Country</label><select id="f-country" class="w-full rounded-xl border border-gray-300 px-3 py-2"><option value="">All countries</option>${countries.map(c=>`<option>${c}</option>`).join('')}</select><label class="block text-sm font-medium text-gray-700">City</label><input id="f-city" class="w-full rounded-xl border border-gray-300 px-3 py-2" placeholder="e.g., London"><label class="block text-sm font-medium text-gray-700">Industry</label><input id="f-industry" class="w-full rounded-xl border border-gray-300 px-3 py-2" placeholder="e.g., IT"><label class="block text-sm font-medium text-gray-700">Job Title</label><input id="f-title" class="w-full rounded-xl border border-gray-300 px-3 py-2" placeholder="e.g., Teacher"><button id="apply-filters" class="w-full rounded-xl bg-indigo-600 px-3 py-2 text-sm font-semibold text-white">Search Jobs</button></aside><div class="space-y-4 xl:col-span-3"><div id="job-list" class="space-y-4"></div><div id="pages" class="flex items-center gap-2"></div></div></section>`;
   byId('apply-filters').addEventListener('click', () => {
-    const role = byId('f-role').value.toLowerCase();
-    const location = byId('f-location').value.toLowerCase();
-    filtered = appData.jobs.filter(j => j.title.toLowerCase().includes(role) && j.location.toLowerCase().includes(location));
+    const country = byId('f-country').value.toLowerCase();
+    const city = byId('f-city').value.toLowerCase();
+    const industry = byId('f-industry').value.toLowerCase();
+    const title = byId('f-title').value.toLowerCase();
+    filtered = appData.jobs.filter(j =>
+      j.country.toLowerCase().includes(country) &&
+      j.city.toLowerCase().includes(city) &&
+      j.industry.toLowerCase().includes(industry) &&
+      j.title.toLowerCase().includes(title)
+    );
     currentPage = 1;
     draw();
   });
